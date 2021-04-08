@@ -10,9 +10,14 @@ namespace Clase3.Ejercicio2.Importing
     {
         static void Main(string[] args)
         {
-            
-        }
+            string filePath = @"D:\\population-final.csv";
+            CsvReader reader = new CsvReader(filePath);
+            Country[] countries = reader.ReadFirstNCountries(10);
 
-        
+            foreach (var country in countries)
+            {
+                Console.WriteLine("P:{0} C {1}", country.Population, country.Name);
+            }
+        }
     }
 }
